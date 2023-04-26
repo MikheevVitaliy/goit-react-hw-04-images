@@ -52,7 +52,7 @@ export const App = () => {
         .finally(() => setLoading(false));
     }
   }, [searchQuery, page]);
-
+  console.log(searchQuery);
   const onSubmit = inputValue => {
     if (searchQuery !== inputValue) {
       setSearchQuery(inputValue);
