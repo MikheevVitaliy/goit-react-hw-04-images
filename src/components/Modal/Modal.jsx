@@ -7,17 +7,18 @@ const modalRoot = document.querySelector('#modal-root');
 
 export const Modal = ({ onClose, selectedImgCard }) => {
   useEffect(() => {
-    const handleKeyDown = event => {
-      if (event.code === 'Escape') {
-        onClose();
-      }
-    };
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onClose()]);
+  }, []);
+
+  const handleKeyDown = event => {
+    if (event.code === 'Escape') {
+      onClose();
+    }
+  };
 
   const handleBackdropClick = event => {
     if (event.target === event.currentTarget) {
