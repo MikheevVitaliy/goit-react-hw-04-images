@@ -7,10 +7,10 @@ const modalRoot = document.querySelector('#modal-root');
 
 export const Modal = ({ onClose, selectedImgCard }) => {
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
+    const eventId = window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keydown', eventId);
     };
   });
 
