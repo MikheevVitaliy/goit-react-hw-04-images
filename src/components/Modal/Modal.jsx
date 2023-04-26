@@ -12,7 +12,7 @@ export const Modal = ({ onClose, selectedImgCard }) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  });
 
   const handleKeyDown = event => {
     if (event.code === 'Escape') {
