@@ -15,14 +15,14 @@ export const App = () => {
   const [imageCards, setImageCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [perPage, setPerPage] = useState(12);
+  // const [perPage, setPerPage] = useState(12);
 
   useEffect(() => {
     if (searchQuery !== '' && page > 0) {
       setLoading(true);
       setTotalHits(0);
 
-      const fetchResponse = FetchApi(searchQuery, page, perPage);
+      const fetchResponse = FetchApi(searchQuery, page,);
       fetchResponse
         .then(resp => {
           console.log(resp);
@@ -52,7 +52,7 @@ export const App = () => {
         .finally(() => setLoading(false));
     }
   }, [searchQuery, page]);
-  console.log(searchQuery);
+
   const onSubmit = inputValue => {
     if (searchQuery !== inputValue) {
       setSearchQuery(inputValue);
